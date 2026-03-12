@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mindful Parenting Prompts — AI Prompt Bundles for Parents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --blush: #F2E8E0;
+    --rose: #E8C9B8;
+    --sage: #B8C9B8;
+    --sage-light: #D6E4D6;
+    --slate: #2C3E50;
+    --slate-mid: #4A5568;
+    --terracotta: #C47B5A;
+    --terracotta-dark: #A86040;
+    --gold: #C9A96E;
+    --navy: #1A2A3A;
+    --midnight: #0F1923;
+    --text: #2C2C2C;
+    --text-light: #6B7280;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(196, 123, 90, 0.12);
+    transition: all 0.3s ease;
+  }
+  nav.scrolled {
+    padding: 12px 48px;
+    box-shadow: 0 2px 20px rgba(44,44,44,0.08);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--slate);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--terracotta); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--slate-mid);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    background: var(--terracotta) !important;
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    font-size: 0.85rem !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: var(--terracotta-dark) !important; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .hero-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 12s ease-in-out infinite;
+  }
+  .hero-bg-circle:nth-child(1) {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #F2E8E0, #E8C9B8);
+    top: -200px; right: -100px;
+    animation-delay: 0s;
+  }
+  .hero-bg-circle:nth-child(2) {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, #D6E4D6, #B8C9B8);
+    bottom: 100px; left: -100px;
+    animation-delay: -4s;
+  }
+  .hero-bg-circle:nth-child(3) {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, #F9EDE3, #E8C9B8);
+    top: 40%; left: 30%;
+    animation-delay: -8s;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(20px, -30px) scale(1.05); }
+    66% { transform: translate(-15px, 20px) scale(0.97); }
+  }
+
+  .hero-text { animation: fadeUp 0.9s ease forwards; opacity: 0; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(196, 123, 90, 0.1);
+    border: 1px solid rgba(196, 123, 90, 0.25);
+    color: var(--terracotta);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before { content: '✦'; font-size: 0.6rem; }
+
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--slate-mid);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 480px;
+    font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--terracotta);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 20px rgba(196, 123, 90, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.15);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover::after { opacity: 1; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196, 123, 90, 0.4); }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--slate);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+    padding: 16px 8px;
+  }
+  .btn-secondary:hover { color: var(--terracotta); }
+  .btn-secondary svg { transition: transform 0.2s; }
+  .btn-secondary:hover svg { transform: translateX(4px); }
+
+  .hero-trust {
+    display: flex; align-items: center; gap: 16px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(196,123,90,0.15);
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+  .trust-item svg { color: var(--sage); flex-shrink: 0; }
+
+  /* Hero cards */
+  .hero-cards {
+    position: relative;
+    animation: fadeUp 0.9s 0.2s ease forwards; opacity: 0;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .hero-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 40px rgba(44, 44, 44, 0.08);
+    border: 1px solid rgba(242, 232, 224, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .hero-card.mom::before { background: linear-gradient(90deg, #E8C9B8, #D4A088); }
+  .hero-card.dad::before { background: linear-gradient(90deg, #B8C9D4, #8BA8B8); }
+  .hero-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(44,44,44,0.12); }
+
+  .hero-card-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .hero-card.mom .hero-card-tag { color: var(--terracotta); }
+  .hero-card.dad .hero-card-tag { color: #5A7A8A; }
+
+  .hero-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .hero-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .hero-card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hero-card-price {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--navy);
+  }
+  .hero-card-price span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+  .card-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--cream);
+    border: 1px solid rgba(196,123,90,0.3);
+    color: var(--terracotta);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .card-cta:hover {
+    background: var(--terracotta);
+    color: white;
+    border-color: var(--terracotta);
+    transform: scale(1.03);
+  }
+
+  .bundle-badge {
+    position: absolute;
+    top: -12px; right: 20px;
+    background: var(--gold);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ─── SECTION COMMONS ─── */
+  section { position: relative; }
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--terracotta); display: inline-block; }
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+  .section-heading em { font-style: italic; color: var(--terracotta); }
+
+  /* ─── PAIN SECTION ─── */
+  .pain-section {
+    padding: 100px 0;
+    background: var(--navy);
+    overflow: hidden;
+  }
+  .pain-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .pain-text .section-label { color: var(--rose); }
+  .pain-text .section-label::before { background: var(--rose); }
+  .pain-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.25;
+    margin-bottom: 24px;
+  }
+  .pain-heading em { font-style: italic; color: var(--rose); }
+  .pain-body {
+    font-size: 1rem;
+    color: rgba(250, 247, 242, 0.7);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .pain-items { display: flex; flex-direction: column; gap: 12px; }
+  .pain-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 0.9rem;
+    color: rgba(250,247,242,0.8);
+    line-height: 1.5;
+  }
+  .pain-check {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(196, 123, 90, 0.2);
+    border: 1px solid rgba(196,123,90,0.4);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .pain-check svg { color: var(--terracotta); }
+
+  .pain-visual {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .pain-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 24px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .pain-card:hover {
+    background: rgba(255,255,255,0.07);
+    transform: translateX(6px);
+  }
+  .pain-card-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: rgba(250,247,242,0.9);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .pain-card-attr {
+    font-size: 0.78rem;
+    color: rgba(250,247,242,0.4);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .how-section { padding: 100px 0; }
+  .how-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 48px;
+  }
+  .how-header { text-align: center; margin-bottom: 64px; }
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    position: relative;
+  }
+  .how-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: calc(12.5% + 28px); right: calc(12.5% + 28px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--rose), var(--sage-light), var(--rose));
+    z-index: 0;
+  }
+  .how-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .how-step.visible { opacity: 1; transform: translateY(0); }
+  .how-step:nth-child(2) { transition-delay: 0.15s; }
+  .how-step:nth-child(3) { transition-delay: 0.3s; }
+  .how-step:nth-child(4) { transition-delay: 0.45s; }
+
+  .how-num {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--rose);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--terracotta);
+    box-shadow: 0 4px 16px rgba(196,123,90,0.15);
+    transition: all 0.3s;
+  }
+  .how-step:hover .how-num {
+    background: var(--terracotta);
+    color: white;
+    border-color: var(--terracotta);
+    transform: scale(1.1);
+  }
+  .how-step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .how-step-desc {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* ─── PRODUCTS ─── */
+  .products-section { padding: 100px 0; background: white; }
+  .products-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 48px;
+  }
+  .products-header { text-align: center; margin-bottom: 64px; }
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .product-card {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(242,232,224,0.8);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    background: var(--cream);
+  }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(44,44,44,0.12); }
+
+  .product-card-header {
+    padding: 40px 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card.mom .product-card-header { background: linear-gradient(135deg, #FAF0EA, #F2E0D4); }
+  .product-card.dad .product-card-header { background: linear-gradient(135deg, #EBF0F4, #D4E0EA); }
+
+  .product-card-header-bg {
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  .product-card.mom .product-card-header-bg { background: radial-gradient(circle, #E8C9B8, transparent); }
+  .product-card.dad .product-card-header-bg { background: radial-gradient(circle, #A8C4D4, transparent); }
+
+  .product-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .product-card.mom .product-icon { background: rgba(196,123,90,0.15); }
+  .product-card.dad .product-icon { background: rgba(90,122,138,0.15); }
+
+  .product-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .product-card.mom .product-tag { color: var(--terracotta); }
+  .product-card.dad .product-tag { color: #5A7A8A; }
+
+  .product-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .product-title em { font-style: italic; }
+  .product-tagline {
+    font-size: 0.85rem;
+    color: var(--slate-mid);
+    line-height: 1.5;
+    position: relative;
+  }
+
+  .product-card-body { padding: 32px 36px; }
+  .product-prompts {
+    display: flex; flex-direction: column; gap: 0;
+    margin-bottom: 28px;
+  }
+  .product-section-item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(44,44,44,0.06);
+    display: flex; align-items: center; gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .product-section-item:last-child { border-bottom: none; }
+  .product-section-item:hover { padding-left: 8px; }
+  .product-section-item:hover .section-dot { transform: scale(1.3); }
+  .section-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .product-card.mom .section-dot { background: var(--rose); }
+  .product-card.dad .section-dot { background: #A8C4D4; }
+  .product-section-name {
+    font-size: 0.875rem;
+    color: var(--slate-mid);
+    flex: 1;
+  }
+  .product-section-count {
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+
+  .product-price-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid rgba(44,44,44,0.08);
+  }
+  .product-price-label { font-size: 0.8rem; color: var(--text-light); }
+  .product-price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .product-buy-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: all 0.25s;
+  }
+  .product-card.mom .product-buy-btn {
+    background: var(--terracotta);
+    color: white;
+    box-shadow: 0 4px 16px rgba(196,123,90,0.25);
+  }
+  .product-card.mom .product-buy-btn:hover { background: var(--terracotta-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,123,90,0.35); }
+  .product-card.dad .product-buy-btn {
+    background: #3D6272;
+    color: white;
+    box-shadow: 0 4px 16px rgba(61,98,114,0.25);
+  }
+  .product-card.dad .product-buy-btn:hover { background: #2E4E5E; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,98,114,0.35); }
+
+  /* Bundle card */
+  .bundle-card {
+    background: var(--navy);
+    border-radius: 24px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .bundle-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(15,25,35,0.25); }
+  .bundle-card-bg {
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,169,110,0.15), transparent);
+    pointer-events: none;
+  }
+  .bundle-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,169,110,0.2);
+    border: 1px solid rgba(201,169,110,0.4);
+    color: var(--gold);
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .bundle-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .bundle-title em { font-style: italic; color: var(--gold); }
+  .bundle-desc {
+    font-size: 0.9rem;
+    color: rgba(250,247,242,0.6);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+  .bundle-includes {
+    display: flex; gap: 24px;
+    margin-bottom: 0;
+  }
+  .bundle-include-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.82rem;
+    color: rgba(250,247,242,0.7);
+  }
+  .bundle-include-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .bundle-cta-block { text-align: center; flex-shrink: 0; }
+  .bundle-was { font-size: 0.85rem; color: rgba(250,247,242,0.4); text-decoration: line-through; margin-bottom: 4px; }
+  .bundle-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .bundle-save {
+    font-size: 0.78rem;
+    color: rgba(250,247,242,0.5);
+    margin-bottom: 20px;
+  }
+  .bundle-save strong { color: var(--gold); }
+  .bundle-buy-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 15px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(201,169,110,0.3);
+  }
+  .bundle-buy-btn:hover { background: #D4B878; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,169,110,0.4); }
+
+  /* ─── SAMPLE PROMPT ─── */
+  .sample-section { padding: 100px 0; }
+  .sample-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+  .sample-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .sample-text .section-heading { margin-bottom: 16px; }
+  .sample-intro {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .sample-tabs { display: flex; gap: 12px; margin-bottom: 24px; }
+  .sample-tab {
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid rgba(196,123,90,0.3);
+    color: var(--terracotta);
+    background: transparent;
+  }
+  .sample-tab.active {
+    background: var(--terracotta);
+    color: white;
+    border-color: var(--terracotta);
+  }
+  .sample-tab:hover:not(.active) { background: rgba(196,123,90,0.08); }
+
+  .prompt-window {
+    background: var(--navy);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(15,25,35,0.2);
+  }
+  .prompt-window-bar {
+    background: rgba(255,255,255,0.05);
+    padding: 14px 20px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .window-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .window-dot:nth-child(1) { background: #FF6058; }
+  .window-dot:nth-child(2) { background: #FFBD2E; }
+  .window-dot:nth-child(3) { background: #28C840; }
+  .window-label {
+    margin-left: 12px;
+    font-size: 0.75rem;
+    color: rgba(250,247,242,0.4);
+    letter-spacing: 0.04em;
+  }
+  .prompt-body { padding: 28px 28px 32px; }
+  .prompt-label {
+    font-size: 0.7rem;
+    color: rgba(250,247,242,0.35);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .prompt-text {
+    font-family: 'DM Mono', 'Fira Code', monospace;
+    font-size: 0.82rem;
+    color: rgba(250,247,242,0.75);
+    line-height: 1.7;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+  }
+  .prompt-highlight { color: var(--gold); }
+  .prompt-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 20px;
+  }
+  .response-label {
+    font-size: 0.7rem;
+    color: rgba(250,247,242,0.35);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ai-badge {
+    background: rgba(201,169,110,0.2);
+    border: 1px solid rgba(201,169,110,0.3);
+    color: var(--gold);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+  .response-text {
+    font-size: 0.82rem;
+    color: rgba(250,247,242,0.65);
+    line-height: 1.7;
+  }
+  .typing-cursor {
+    display: inline-block;
+    width: 2px; height: 14px;
+    background: var(--gold);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* ─── FEATURES ─── */
+  .features-section { padding: 100px 0; background: var(--blush); }
+  .features-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+  .features-header { text-align: center; margin-bottom: 64px; }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 36px 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(242,232,224,0.5);
+  }
+  .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,44,44,0.1); }
+  .feature-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--blush), var(--cream));
+  }
+  .feature-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .feature-desc { font-size: 0.875rem; color: var(--text-light); line-height: 1.65; font-weight: 300; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials-section { padding: 100px 0; }
+  .testimonials-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+  .testimonials-header { text-align: center; margin-bottom: 64px; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 28px;
+    border: 1px solid rgba(242,232,224,0.8);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,44,44,0.08); }
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--rose);
+    position: absolute;
+    top: 12px; left: 22px;
+    line-height: 1;
+    opacity: 0.6;
+  }
+  .testimonial-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+  .testimonial-stars span { color: var(--gold); font-size: 0.9rem; }
+  .testimonial-text {
+    font-size: 0.88rem;
+    color: var(--slate-mid);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    padding-top: 8px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .testimonial-name { font-size: 0.85rem; font-weight: 500; color: var(--navy); }
+  .testimonial-role { font-size: 0.75rem; color: var(--text-light); }
+
+  /* ─── FAQ ─── */
+  .faq-section { padding: 100px 0; background: white; }
+  .faq-inner { max-width: 800px; margin: 0 auto; padding: 0 48px; }
+  .faq-header { text-align: center; margin-bottom: 56px; }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 1px solid rgba(44,44,44,0.07);
+    overflow: hidden;
+  }
+  .faq-question {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 0;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--navy);
+    gap: 16px;
+    transition: color 0.2s;
+    user-select: none;
+  }
+  .faq-question:hover { color: var(--terracotta); }
+  .faq-chevron {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,123,90,0.25);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s;
+    color: var(--terracotta);
+  }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--terracotta); color: white; }
+  .faq-answer {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.75;
+    font-weight: 300;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0;
+  }
+  .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 22px; }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    padding: 120px 48px;
+    background: linear-gradient(135deg, var(--navy), #1A2E40);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(196,123,90,0.08), transparent);
+    pointer-events: none;
+  }
+  .final-cta-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+  .final-cta-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,169,110,0.15);
+    border: 1px solid rgba(201,169,110,0.3);
+    color: var(--gold);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .final-cta-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .final-cta-heading em { font-style: italic; color: var(--gold); }
+  .final-cta-sub {
+    font-size: 0.95rem;
+    color: rgba(250,247,242,0.6);
+    line-height: 1.7;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+  .final-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+  .final-cta-guarantee {
+    font-size: 0.8rem;
+    color: rgba(250,247,242,0.35);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--midnight);
+    padding: 40px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(250,247,242,0.5);
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--terracotta); }
+  .footer-text {
+    font-size: 0.78rem;
+    color: rgba(250,247,242,0.25);
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 48px; }
+    .hero-cards { order: -1; }
+    .pain-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
+    .how-steps { grid-template-columns: repeat(2, 1fr); }
+    .how-steps::before { display: none; }
+    .products-grid { grid-template-columns: 1fr; }
+    .bundle-card { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+    .bundle-cta-block { text-align: left; }
+    .sample-layout { grid-template-columns: 1fr; gap: 48px; }
+    .features-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .section-inner, .how-inner, .products-inner, .sample-inner, .features-inner, .testimonials-inner { padding: 0 24px; }
+    .final-cta { padding: 80px 24px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+  }
+  @media (max-width: 600px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="hero-bg">
+  <div class="hero-bg-circle"></div>
+  <div class="hero-bg-circle"></div>
+  <div class="hero-bg-circle"></div>
+</div>
+
+<!-- Nav -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Mindful<span>Parenting</span>Prompts</a>
+  <div class="nav-links">
+    <a href="#products">The Bundles</a>
+    <a href="#how">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://lunarhead.gumroad.com/l/qcfqxl" target="_blank" class="nav-cta">Get the Bundle ✦ $50</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section>
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">AI Prompt Bundles for Parents</div>
+      <h1 class="hero-headline">
+        Parent more <em>intentionally</em> — with an AI thinking partner available 24/7
+      </h1>
+      <p class="hero-sub">
+        Done-for-you ChatGPT & Claude prompts designed for the real challenges of parenting. No fluff. No generic advice. Just a calm, expert voice in your pocket — whenever you need it.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">
+          Browse the Bundles
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how" class="btn-secondary">
+          See how it works
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Instant download
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Works with free ChatGPT
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          60-second setup
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-cards">
+      <div class="hero-card mom">
+        <div class="hero-card-tag">For Moms & All Parents</div>
+        <div class="hero-card-title">The Mindful Parent Bundle</div>
+        <div class="hero-card-desc">25 prompts for peaceful mornings, connected conversations, homework struggles & more.</div>
+        <div class="hero-card-footer">
+          <div class="hero-card-price">$47 <span>/ 25 prompts</span></div>
+          <a href="https://lunarhead.gumroad.com/l/hxdghti" target="_blank" class="card-cta">Get it →</a>
+        </div>
+      </div>
+      <div class="hero-card dad">
+        <div class="hero-card-tag">For Dads</div>
+        <div class="hero-card-title">The Present Father Bundle</div>
+        <div class="hero-card-desc">25 prompts for showing up emotionally, presence, partnership & your identity as a man.</div>
+        <div class="hero-card-footer">
+          <div class="hero-card-price">$35 <span>/ 25 prompts</span></div>
+          <a href="https://lunarhead.gumroad.com/l/jqbpwy" target="_blank" class="card-cta">Get it →</a>
+        </div>
+      </div>
+      <div class="hero-card" style="background: linear-gradient(135deg, #F5F0E8, #EDE4D4); border: 1.5px solid rgba(201,169,110,0.35);">
+        <div class="bundle-badge">Best Value</div>
+        <div class="hero-card-tag" style="color: var(--gold);">Complete Collection</div>
+        <div class="hero-card-title">Both Bundles Together</div>
+        <div class="hero-card-desc">50 total prompts covering every parenting challenge — for both partners.</div>
+        <div class="hero-card-footer">
+          <div class="hero-card-price" style="display:flex;align-items:center;gap:8px;">
+            $50 <span style="text-decoration:line-through;color:var(--text-light);font-size:0.85rem;">$70</span>
+          </div>
+          <a href="https://lunarhead.gumroad.com/l/qcfqxl" target="_blank" class="card-cta" style="border-color:rgba(201,169,110,0.4);color:var(--gold);">Save $20 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain Section -->
+<section class="pain-section">
+  <div class="pain-inner">
+    <div class="pain-text">
+      <div class="section-label">The reality</div>
+      <h2 class="pain-heading">You're doing your best.<br><em>But you're doing it alone.</em></h2>
+      <p class="pain-body">
+        No on-call therapist. No parenting handbook for your specific kid. Just you, at 11pm, Googling "how to stop yelling at my kids" — again.
+      </p>
+      <div class="pain-items">
+        <div class="pain-item">
+          <div class="pain-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>You know what <em>kind</em> of parent you want to be — but in the moment, you revert to old patterns</span>
+        </div>
+        <div class="pain-item">
+          <div class="pain-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Generic advice never fits your family's situation</span>
+        </div>
+        <div class="pain-item">
+          <div class="pain-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Therapy is expensive, waitlists are long, and you needed help yesterday</span>
+        </div>
+        <div class="pain-item">
+          <div class="pain-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>You've tried AI before, but don't know how to ask the right questions to get useful answers</span>
+        </div>
+      </div>
+    </div>
+    <div class="pain-visual">
+      <div class="pain-card">
+        <div class="pain-card-quote">"I lost it with my kids again tonight. I hate that I keep doing this. I just need someone to help me figure out what to say."</div>
+        <div class="pain-card-attr">— Every exhausted parent, 11pm</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-quote">"I show up. I provide. But I know my kids feel the distance. I just don't know how to close it."</div>
+        <div class="pain-card-attr">— Dad who wants to do better</div>
+      </div>
+      <div class="pain-card" style="border-color: rgba(196,123,90,0.25);">
+        <div class="pain-card-quote" style="color: var(--rose);">These prompts are the thinking partner you've always needed — available right now.</div>
+        <div class="pain-card-attr" style="color: rgba(250,247,242,0.6);">— What this bundle gives you</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-section" id="how">
+  <div class="how-inner">
+    <div class="how-header reveal">
+      <div class="section-label">Simple process</div>
+      <h2 class="section-heading">From purchase to <em>personalized advice</em> in 60 seconds</h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-step-title">Download the PDF</div>
+        <div class="how-step-desc">Instantly receive your beautifully designed, 13-page prompt bundle after purchase.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-step-title">Find your challenge</div>
+        <div class="how-step-desc">Browse 25 organized prompts — each designed for a specific parenting scenario.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-step-title">Copy, paste & fill in</div>
+        <div class="how-step-desc">Take 60 seconds to personalize the prompt with your family's details.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-step-title">Get expert guidance</div>
+        <div class="how-step-desc">Receive thoughtful, personalized advice tailored to your exact situation — instantly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products-section" id="products">
+  <div class="products-inner">
+    <div class="products-header reveal">
+      <div class="section-label">The bundles</div>
+      <h2 class="section-heading">Choose your <em>perfect bundle</em></h2>
+      <p style="font-size:0.95rem;color:var(--text-light);max-width:520px;margin:0 auto;line-height:1.7;font-weight:300;">Two focused collections, each tackling the real challenges you face. Get both at a discount — ideal for couples.</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- Mindful Parent -->
+      <div class="product-card mom reveal">
+        <div class="product-card-header">
+          <div class="product-card-header-bg"></div>
+          <div class="product-icon">🌸</div>
+          <div class="product-tag">For All Parents</div>
+          <div class="product-title">The Mindful Parent<br><em>Bundle</em></div>
+          <div class="product-tagline">25 prompts for calmer, more connected parenting</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-prompts">
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">🌅 Peaceful Mornings</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">💬 Connected Conversations</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">📚 Homework & Learning</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">📱 Screen Time & Tech</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">🌿 Parent Wellbeing</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+          </div>
+          <div class="product-price-row">
+            <div>
+              <div class="product-price-label">One-time purchase</div>
+              <div class="product-price-amount">$47</div>
+            </div>
+            <a href="https://lunarhead.gumroad.com/l/hxdghti" target="_blank" class="product-buy-btn">
+              Get this bundle →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Present Father -->
+      <div class="product-card dad reveal reveal-delay-1">
+        <div class="product-card-header">
+          <div class="product-card-header-bg"></div>
+          <div class="product-icon">🧭</div>
+          <div class="product-tag">For Dads</div>
+          <div class="product-title">The Present Father<br><em>Bundle</em></div>
+          <div class="product-tagline">25 prompts to show up fully, not just physically</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-prompts">
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">❤️ Showing Up Emotionally</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">🌟 Being Present, Not Just There</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">💑 Marriage & Partnership</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">💼 Work, Identity & Purpose</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+            <div class="product-section-item">
+              <div class="section-dot"></div>
+              <span class="product-section-name">💪 Physical & Mental Health</span>
+              <span class="product-section-count">5 prompts</span>
+            </div>
+          </div>
+          <div class="product-price-row">
+            <div>
+              <div class="product-price-label">One-time purchase</div>
+              <div class="product-price-amount">$35</div>
+            </div>
+            <a href="https://lunarhead.gumroad.com/l/jqbpwy" target="_blank" class="product-buy-btn">
+              Get this bundle →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bundle -->
+    <div class="bundle-card reveal">
+      <div class="bundle-card-bg"></div>
+      <div>
+        <div class="bundle-label">✦ Best Value</div>
+        <div class="bundle-title">The Complete Collection — <em>Both Bundles</em></div>
+        <p class="bundle-desc">Everything you need to parent with more presence, patience, and purpose. Perfect for couples who want to tackle parenting — and partnership — together. 50 premium prompts, one price.</p>
+        <div class="bundle-includes">
+          <div class="bundle-include-item"><div class="bundle-include-dot"></div>The Mindful Parent Bundle (25 prompts)</div>
+          <div class="bundle-include-item"><div class="bundle-include-dot"></div>The Present Father Bundle (25 prompts)</div>
+        </div>
+      </div>
+      <div class="bundle-cta-block">
+        <div class="bundle-was">$70 separately</div>
+        <div class="bundle-price">$50</div>
+        <div class="bundle-save">You save <strong>$20</strong></div>
+        <a href="https://lunarhead.gumroad.com/l/qcfqxl" target="_blank" class="bundle-buy-btn">
+          Get Both Bundles ✦
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sample Prompt -->
+<section class="sample-section">
+  <div class="sample-inner">
+    <div class="sample-layout">
+      <div class="sample-text reveal">
+        <div class="section-label">See it in action</div>
+        <h2 class="section-heading">What a prompt actually <em>looks like</em></h2>
+        <p class="sample-intro">Every prompt is pre-engineered to get you a genuinely useful, expert-quality response — not generic advice. Each one includes a Pro Tip to get even more out of it.</p>
+        <div class="sample-tabs">
+          <button class="sample-tab active" onclick="showPrompt('mom')">Mindful Parent</button>
+          <button class="sample-tab" onclick="showPrompt('dad')">Present Father</button>
+        </div>
+        <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">
+          💡 <strong style="color:var(--navy);">Pro tip included:</strong> Each prompt comes with guidance on how to personalize it for even better results — so you never feel stuck staring at a blank screen.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="prompt-window">
+          <div class="prompt-window-bar">
+            <div class="window-dot"></div>
+            <div class="window-dot"></div>
+            <div class="window-dot"></div>
+            <div class="window-label">ChatGPT · claude.ai · Gemini</div>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-label">Your Prompt</div>
+            <div class="prompt-text" id="prompt-display">
+              You are a child development expert and family therapist. My child is <span class="prompt-highlight">[age]</span> years old. Every morning we struggle with <span class="prompt-highlight">[specific issue: e.g. getting dressed, leaving the house]</span>. It usually ends with me losing my patience. Give me a calm, age-appropriate script I can use tomorrow morning, plus two backup strategies if it escalates.
+            </div>
+            <hr class="prompt-divider">
+            <div class="response-label">
+              AI Response
+              <span class="ai-badge">Expert Quality</span>
+            </div>
+            <div class="response-text" id="response-display">
+              "I understand how draining these mornings can be. Here's a script designed for a 6-year-old that works with their developmental stage, not against it:<br><br>
+              <em>Start 10 min earlier than needed. Kneel to eye level: 'Good morning, buddy. We have a fun challenge today — can you get dressed before the timer goes off?'</em><br><br>
+              Set a 3-minute sand timer (visual cues work better than abstract time for this age)...<span class="typing-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features-section">
+  <div class="features-inner">
+    <div class="features-header reveal">
+      <div class="section-label">Why it works</div>
+      <h2 class="section-heading">Built for <em>real parents</em>, not perfect ones</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Works in 60 seconds</div>
+        <div class="feature-desc">Copy, paste, fill in one or two details about your situation. That's it. No learning curve, no tech skills needed.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-title">Personalized to your family</div>
+        <div class="feature-desc">Unlike generic advice, these prompts pull expert-quality guidance tailored to your child's age, your specific situation, and your family's dynamic.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🆓</div>
+        <div class="feature-title">Free AI works perfectly</div>
+        <div class="feature-desc">ChatGPT free, Claude free, Gemini free — these prompts are designed to get great results from any AI assistant, no subscriptions required.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📖</div>
+        <div class="feature-title">Beautiful, print-ready PDF</div>
+        <div class="feature-desc">A thoughtfully designed 13-page guide you'll actually want to keep open. Bookmark your favorites. Return to it whenever you need it.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🧠</div>
+        <div class="feature-title">Expert-engineered prompts</div>
+        <div class="feature-desc">Each prompt is crafted to role-frame the AI as an expert — so instead of generic responses, you get thoughtful, nuanced guidance every time.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🌙</div>
+        <div class="feature-title">Available at 2am</div>
+        <div class="feature-desc">No appointments. No waitlists. No judgment. Your AI thinking partner is ready whenever you need it — including the moments that can't wait.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="testimonials-header reveal">
+      <div class="section-label">Kind words</div>
+      <h2 class="section-heading">Parents who've <em>used these prompts</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">"I used the 'Repair conversation after losing your cool' prompt the same night I bought this. I didn't expect to feel emotional, but the response gave me exactly what I needed to say to my daughter. We talked for an hour."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#F2E8E0,#E8C9B8);">👩</div>
+          <div>
+            <div class="testimonial-name">Sarah M.</div>
+            <div class="testimonial-role">Mom of two, ages 7 & 10</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">"As a dad, I never felt like parenting content was written for me. This one is. The 'Who are you beyond provider?' prompt hit harder than any podcast I've ever listened to. Genuinely worth every dollar."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#EBF0F4,#D4E0EA);">👨</div>
+          <div>
+            <div class="testimonial-name">Marcus T.</div>
+            <div class="testimonial-role">Dad of three, ages 4, 8 & 12</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="testimonial-text">"My partner and I got the bundle together. We've been using different prompts all week and comparing our results at dinner. It's become a whole thing. Highly recommend for couples."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#F5F0E8,#EDE4D4);">👫</div>
+          <div>
+            <div class="testimonial-name">Jordan & Alex R.</div>
+            <div class="testimonial-role">Parents of a 5-year-old</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <div class="section-label">Questions</div>
+      <h2 class="section-heading">Frequently <em>asked</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Do I need a paid AI subscription to use these?
+          <div class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-answer">Not at all. These prompts are designed to work beautifully with the free versions of ChatGPT, Claude, and Gemini. You don't need a Plus subscription or any paid plan. Just open your AI of choice and paste the prompt.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What ages are these prompts designed for?
+          <div class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-answer">The Mindful Parent Bundle is designed for parents of children ages 2–16. The Present Father Bundle is for dads of kids of any age. Each prompt lets you specify your child's age so the AI tailors its response accordingly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          How is this different from just asking AI questions myself?
+          <div class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-answer">The difference is enormous. Most people ask AI vague questions and get generic answers. These prompts are carefully engineered to role-frame the AI as a specific expert, provide the right context, and ask for exactly the format and depth of response that's actually useful. It's the difference between "how do I talk to my teenager" and receiving a tailored 500-word script for your exact situation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What do I actually receive after purchase?
+          <div class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-answer">You'll receive instant access to a beautifully designed, print-ready PDF (13 pages). It contains all 25 prompts organized by section, along with a Pro Tip for each one. Everything is formatted for easy reading and use — no fluff, just what you need.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Is there a money-back guarantee?
+          <div class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-answer">Yes. If you're not satisfied with your purchase, just email us and we'll make it right. We want these prompts to genuinely help your family — if they don't, we don't want your money.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Should I get one bundle or both?
+          <div class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-answer">The Mindful Parent Bundle covers everyday parenting challenges and is great for any parent. The Present Father Bundle is specifically written for dads, covering emotional presence, identity, and partnership. If you have a partner, getting both together (for $50 instead of $82) means you can each work through your own prompts and share insights — many couples find this surprisingly connecting.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="final-cta-content">
+    <div class="final-cta-label">✦ Start tonight</div>
+    <h2 class="final-cta-heading">You don't have to figure this out <em>alone</em></h2>
+    <p class="final-cta-sub">A calm, knowledgeable thinking partner is waiting. Download your bundle in the next 60 seconds and use it before the day is out.</p>
+    <div class="final-cta-buttons">
+      <a href="https://lunarhead.gumroad.com/l/qcfqxl" target="_blank" class="bundle-buy-btn" style="font-size:1rem;padding:17px 36px;">
+        Get Both Bundles — $50 ✦
+      </a>
+      <a href="https://lunarhead.gumroad.com/l/hxdghti" target="_blank" class="btn-primary" style="background:rgba(255,255,255,0.1);box-shadow:none;border:1px solid rgba(255,255,255,0.2);">
+        Mindful Parent — $47
+      </a>
+      <a href="https://lunarhead.gumroad.com/l/jqbpwy" target="_blank" class="btn-primary" style="background:rgba(255,255,255,0.1);box-shadow:none;border:1px solid rgba(255,255,255,0.2);">
+        Present Father — $35
+      </a>
+    </div>
+    <div class="final-cta-guarantee">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Instant download · Satisfaction guaranteed · Works with free AI
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo">Mindful<span>Parenting</span>Prompts</a>
+  <div class="footer-text">© 2025 MindfulParentingPrompts.com · All rights reserved</div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // How steps reveal
+  const howSteps = document.querySelectorAll('.how-step');
+  const howObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.2 });
+  howSteps.forEach(el => howObserver.observe(el));
+
+  // FAQ
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Sample prompt switcher
+  const prompts = {
+    mom: {
+      prompt: `You are a child development expert and family therapist. My child is <span class="prompt-highlight">[age]</span> years old. Every morning we struggle with <span class="prompt-highlight">[specific issue]</span>. It usually ends with me losing my patience. Give me a calm, age-appropriate script I can use tomorrow morning, plus two backup strategies if it escalates.`,
+      response: `"I understand how draining these mornings can be. Here's a script designed for a 6-year-old that works with their developmental stage, not against it:<br><br><em>Start 10 min earlier than needed. Kneel to eye level: 'Good morning, buddy. We have a fun challenge today — can you get dressed before the timer goes off?'</em><br><br>Set a 3-minute sand timer (visual cues work better than abstract time for this age)...<span class="typing-cursor"></span>`
+    },
+    dad: {
+      prompt: `You are a family therapist specializing in fatherhood and emotional intelligence. I'm a dad who wants to be more present, but after work I find myself checked out — phone in hand, not really listening. My child is <span class="prompt-highlight">[age]</span>. Give me a specific 10-minute transition ritual I can do between leaving work and arriving home that helps me show up as the dad I want to be.`,
+      response: `"What you're describing is one of the most common challenges modern dads face — context-switching from work mode to dad mode is genuinely hard, and your phone is the easiest escape from that discomfort.<br><br>Here's a 10-minute car ritual: Pull into a parking spot 5 minutes early. Turn off the radio. Take 3 slow breaths. Ask yourself one question: 'What does my kid need most from me tonight?'...<span class="typing-cursor"></span>`
+    }
+  };
+
+  function showPrompt(type) {
+    document.getElementById('prompt-display').innerHTML = prompts[type].prompt;
+    document.getElementById('response-display').innerHTML = prompts[type].response;
+    document.querySelectorAll('.sample-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
